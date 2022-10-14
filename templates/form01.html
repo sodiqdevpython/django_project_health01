@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <style>
+      body{
+        background-image: url('https://oir.mobi/uploads/posts/2021-03/1616535002_8-p-meditsinskii-fon-8.jpg')
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+<form method="POST" action="addform" class="row g-3 needs-validation" novalidate> {% csrf_token %}
+    <div class="col-md-4 mt-5">
+      <label for="validationCustom01" class="form-label">Ф.И.О.</label>
+      {{ form.fio }}
+      <div class="valid-feedback">
+        Выглядит неплохо!
+      </div>
+    </div>
+    <div class="col-md-1 mt-5">
+      <label for="validationCustom01" class="form-label">Возраст</label>
+      <div style='width: 4rem;' class="input-group has-validation">
+        {{ form.data_rojdeniya }}
+      </div>
+    </div>
+    <div class="mt-5 col-md-4">
+      <div>
+        <p>Пол</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input shadow" type="radio" name="pol" id="m" value="Мужской">
+          <label class="form-check-label" for="m">Мужской</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input shadow" type="radio" name="pol" id="j" value="Женский">
+          <label class="form-check-label" for="j">Женский</label>
+        </div>
+      </div>
+    </div>
+
+  <div class="row g-3 needs-validation" novalidate> 
+    <div class='mt-5'>
+    <div class="row shadow" style="border: 2px solid whitesmoke; border-radius: 15px; background-color: #E8E8E8;">
+      <div class='py-5' style="position: relative;">
+        <h5 style="margin-left:350px;">Сопутствующие заболевания (отметить):</h5>
+      </div>
+      <div class="col-md-6">
+        <input class="form-check-input" type="checkbox" value="A" id="invalidCheck01" name="lst1" required>
+        <label class="form-check-label" for="invalidCheck01">
+          <b>A</b> Гипертоническая болезнь
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="B" id="invalidCheck02" name="lst2" required>
+        <label class="form-check-label" for="invalidCheck02">
+          <b>B</b> Ишемическая болезнь сердца. Стабильная стенокардия нарушения 
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="C" id="invalidCheck03" name="lst3" required>
+        <label class="form-check-label" for="invalidCheck03">
+          <b>C</b> В анамнезе перенесенный ИМ 
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="D" id="invalidCheck04" name="lst4" required>
+        <label class="form-check-label" for="invalidCheck04">
+          <b>D</b> В анамнезе перенесенный ОНМК, ТИА
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="E" id="invalidCheck05" name="lst5" required>
+          <label class="form-check-label" for="invalidCheck05">
+            <b>E</b> ХСН
+          </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="F" id="invalidCheck06" name="lst6" required>
+          <label class="form-check-label" for="invalidCheck06">
+            <b>F</b> Атеросклероз периферический многососудистый со стенозом <br> и/или эндоартерэктомии в анамнезе, аневризма аорты
+          </label>
+      </div>
+      <div class="col-md-6">
+        <input class="form-check-input" type="checkbox" value="G" name="lst7" id="invalidCheck06" required>
+          <label class="form-check-label" for="invalidCheck06">
+            <b>G</b> Перенесенные операции на сердце и сосудах:
+          </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="H" name="lst8" id="invalidCheck07" required>
+          <label class="form-check-label" for="invalidCheck07">
+            <b>H</b> Нарушения ритма:
+          </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="I" name="lst9" id="invalidCheck08" required>
+        <label class="form-check-label" for="invalidCheck08">
+          <b>I</b> Сахарный диабет без осложнений
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="J" name="lst10" id="invalidCheck09" required>
+        <label class="form-check-label" for="invalidCheck09">
+          <b>J</b> Сахарный диабет с осложнениями
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="K" name="lst11" id="invalidCheck10" required>
+        <label class="form-check-label" for="invalidCheck10">
+          <b>K</b> Нарушение толерантности к глюкозе
+        </label>
+        <br>
+        <br>
+        <input class="form-check-input" type="checkbox" value="L" name="lst12" id="invalidCheck11" required>
+        <label class="form-check-label" for="invalidCheck11">
+          <b>L</b> ХБП 
+        </label>
+        <br>
+        <br>
+      </div>
+      <div class='container'>
+        <div class='row'>
+          <div class='row'>
+              <div class="mt-4 col-md-4 ms-2">
+                <p>Употребление алкоголя (отметить):</p>
+              </div>
+              <div class='col-md-7 mt-4'>
+                <div class="form-check form-check-inline ms-5">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio24" value="да">
+                  <label class="form-check-label" for="inlineRadio24">да</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio25" value="нет">
+                  <label class="form-check-label" for="inlineRadio25">нет</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio26" value="курил в прошлом">
+                  <label class="form-check-label" for="inlineRadio26">курил в прошлом</label>
+                </div>
+              </div>
+          </div>
+          <div style="position:relative; bottom:1.5rem;" class='col-md-4'>
+            <table class='mt-5'>
+              <tbody>
+                <tr >
+                  <th scope="row"></th>
+                  <td>САД мм.рт.ст</td>
+                  <td><input style="border-color:whitesmoke;" type="text" name="t1"></td>
+                <tr>
+            </table>
+          </div>
+          <div style="position:relative; bottom:1.5rem;" class='col-md-4'>
+            <table class='mt-5'>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td>ДАД мм.рт.ст</td>
+                  <td><input style="border-color:whitesmoke;" type="text" name="t2"></td>
+                </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      </div>
+      <div class="row shadow mt-5" style="border: 2px solid whitesmoke; border-radius: 15px; background-color: #E8E8E8;">
+        <div class="mt-5">
+          <div style="position: relative;">
+            <h5 style="margin-left:280px;">Антропометрические данные и данные Tanita:</h5>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">№ п/п</th>
+              <th scope="col">Показатели</th>
+              <th scope="col">Исходно</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Рост (Р), м (данные вводятся врачом)</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t10"></td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Масса тела (МТ) кг (данные вводятся врачом).</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t11"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Окружность талии, см (данные вводятся врачом).</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t12"></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Окружность бедер, см (данные вводятся врачом).</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t13"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row shadow mt-5" style="border: 2px solid whitesmoke; border-radius: 15px; background-color: #E8E8E8;">
+        <div class="mt-5">
+          <div style="position: relative;">
+            <h5 style="margin-left:280px;">Лабораторные данные:</h5>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">№ п/п</th>
+              <th scope="col">Показатели</th>
+              <th scope="col">Исходно</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Глюкоза в крови, ммоль/л</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t29"></td>
+            </tr>    
+            <tr>
+              <th scope="row">2</th>
+              <td>Креатинин, мкмоль/л</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t32"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Мочевая кислота, мкмоль/л</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t33"></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td>Общий холестерин, XC ммоль/л</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t34"></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td>ЛПНП, ммоль/л</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t35"></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td>ЛПВП, ммоль/л</td>
+              <td><input style="border-color:whitesmoke;" type="text" name="t36"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <input class="btn btn-primary shadow ms-3 mt-5 my-5" style="width: 150px;" type="submit" value="Результат">
+  </form>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
