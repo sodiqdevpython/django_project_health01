@@ -10,9 +10,23 @@
     <div class='container mt-3'>
           <div class='row'>
             <div class='col-md-3'></div>
-            <div style='width:50%;' class="col-md-4 alert alert-primary shadow" role="alert">
-                {{ result }}
-            </div>
+              {% if result == 'Низкий риск' %}
+                <div style='width:50%; height:4.3rem;' class="col-md-4 alert alert-success shadow ms-5" role="alert">
+                  <p style='text-align:center;' class='lead'><b>{{ result }}<b></p>
+                </div>
+              {% elif result == 'Умеренный риск' %}
+                <div style='width:50%; height:4.3rem;' class="col-md-4 alert alert-info shadow ms-5" role="alert">
+                  <p style='text-align:center;' class='lead'><b>{{ result }}<b></p>
+                </div>
+              {% elif result == 'Высокий риск' %}
+                <div style='width:40%; height:4.3rem;' class="col-md-4 alert alert-warning shadow ms-5" role="alert">
+                  <p style='text-align:center;' class='lead'><b>{{ result }}<b></p>
+                </div>
+              {% else %}
+                <div style='width:50%; height:4.3rem;' class="col-md-4 alert alert-danger shadow ms-5" role="alert">
+                  <p style='text-align:center;' class='lead'><b>{{ result }}<b></p>
+                </div>
+              {% endif %}
             <div class='mt-5 shadow'>
               <div class='col-md-4'></div>
               <div><p class='lead'>Соотношение окружность: {{f1}}</p></div>
